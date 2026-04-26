@@ -192,7 +192,7 @@ section { position: relative; }
   transition: all var(--t);
   white-space: nowrap;
   cursor: pointer;
-  border: 1.5px solid transparent;
+  border: 2px solid transparent;
 }
 .btn .ico { font-size: 18px; transition: transform var(--t); stroke-width: 2.2; }
 .btn:hover .ico { transform: translateX(3px); }
