@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты АПАГА — строительная компания в Москве. ш. Волоколамское, 116. Телефон директора, email, мессенджеры. Реквизиты ООО.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <title>Контакты — АПАГА · Москва · ш. Волоколамское, 116</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .ct-hero { background: var(--ink); color: #fff; padding: 140px 0 180px; position: relative; overflow: hidden; }
+    .ct-hero__bg { position: absolute; inset: 0; opacity: .12; background-size: cover; background-position: center; }
+    .ct-hero__veil { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,24,43,.8), var(--ink)); }
+    .ct-hero .wrap { position: relative; z-index: 2; }
+    .ct-hero__crumbs { display: flex; gap: 8px; font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .ct-hero__crumbs a:hover { color: var(--accent); }
+
+    .ct-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: -80px;
+      position: relative;
+      z-index: 5;
+    }
+    .ct-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 36px 32px;
+      box-shadow: var(--sh-lg);
+      transition: all var(--t);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .ct-card:hover { transform: translateY(-6px); border-color: var(--accent-line); }
+    .ct-card__top { display: flex; gap: 16px; align-items: center; }
+    .ct-card__ico {
+      width: 52px; height: 52px;
+      background: var(--accent-soft);
+      color: var(--accent-d);
+      border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ct-card__ico .ico { font-size: 24px; stroke-width: 1.6; }
+    .ct-card__h { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 4px; }
+    .ct-card__title { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -.012em; }
+    .ct-card__body { font-size: 15px; color: var(--text); line-height: 1.65; }
+    .ct-card__body strong { color: var(--ink); font-weight: 700; }
+    .ct-card__body a { color: var(--ink); font-weight: 600; }
+    .ct-card__body a:hover { color: var(--accent-d); }
+    .ct-card__big {
+      font-size: 24px; font-weight: 800; color: var(--ink);
+      letter-spacing: -.018em; line-height: 1.2;
+    }
+    .ct-card__big a:hover { color: var(--accent-d); }
+    .ct-card__sm { font-size: 13px; color: var(--text-mute); margin-top: 6px; }
+    .ct-card__chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+    .ct-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 100px;
+      background: var(--bg-soft); color: var(--ink);
+      font-size: 13px; font-weight: 600;
+      transition: all var(--t);
+    }
+    .ct-chip:hover { background: var(--ink); color: #fff; transform: translateY(-2px); }
+    .ct-chip--tg:hover { background: #229ED9; }
+    .ct-chip--max:hover { background: linear-gradient(135deg, #FF6E29, #FF3D7F); }
+    .ct-chip--wa:hover { background: #25D366; }
+    .ct-chip .ico { font-size: 14px; }
+
+    .map-wrap {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--sh);
+      aspect-ratio: 21/9;
+      background: var(--bg-soft);
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .req-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 36px;
+    }
+    .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 36px; margin-top: 24px; }
+    .req-item { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--border-soft); }
+    .req-item__lab { font-size: 13px; color: var(--text-mute); }
+    .req-item__val { font-size: 14px; color: var(--ink); font-weight: 600; text-align: right; }
+
+    @media (max-width: 1100px) {
+      .ct-cards-grid { grid-template-columns: 1fr; }
+      .ct-cards-grid { margin-top: 36px; }
+    }
+    @media (max-width: 900px) {
+      .req-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4M18 9h2a2 2 0 0 1 2 2v11h-4M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+<symbol id="i-tower" viewBox="0 0 24 24"><path d="M9 22V8l3-6 3 6v14M9 12h6M5 22V14l4-2M19 22V14l-4-2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+<symbol id="i-brush" viewBox="0 0 24 24"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.07"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></symbol>
+<symbol id="i-pipe" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2v6L4.5 19a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L15 8V2M9 2h6M7 16h10"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-calculator" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-trending" viewBox="0 0 24 24"><path d="M23 6L13.5 15.5l-5-5L1 18M17 6h6v6"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></symbol>
+<symbol id="i-hard-hat" viewBox="0 0 24 24"><path d="M2 18h20M4 18v-3a8 8 0 0 1 16 0v3M9 7V4h6v3"/></symbol>
+<symbol id="i-document" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+<symbol id="i-handshake" viewBox="0 0 24 24"><path d="M11 17l2 2a1 1 0 0 0 1.4 0l5.6-5.6a1 1 0 0 0 0-1.4l-2-2"/><path d="M22 5l-2 2-7-7-3 3 2 2-3 3 4 4"/><path d="M2 14l4-4 7 7-4 4z"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2-1 0-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25-.25 4-2.75 4-1 0-1 .008-1 1.031V20c0 1 0 1 1 1z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22V12"/></symbol>
+<symbol id="i-max" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.5 0-2.96-.33-4.27-.95l-5.43 1.32a.5.5 0 0 1-.6-.65l1.7-5.27A10 10 0 0 1 2 12 10 10 0 0 1 12 2z"/></symbol>
+</svg>
+
+
+
+<header class="hdr">
+  <div class="hdr__row">
+    <a href="index.html" class="hdr__logo"><img src="assets/img/logo.svg" alt="АПАГА" width="170" height="48"></a>
+    <nav class="hdr__nav">
+      <a href="index.html" class="nav-link">Главная</a>
+      <div class="has-drop">
+        <a href="services/monolit.html" class="nav-link">Услуги</a>
+        <div class="dropdown">
+          <a href="services/monolit.html" class="drop-link"><svg class="ico"><use href="#i-tower"/></svg> Монолитные работы</a>
+          <a href="services/fasad.html" class="drop-link"><svg class="ico"><use href="#i-layers"/></svg> Фасадные работы</a>
+          <a href="services/otdelka.html" class="drop-link"><svg class="ico"><use href="#i-brush"/></svg> Отделочные работы</a>
+          <a href="services/seti.html" class="drop-link"><svg class="ico"><use href="#i-pipe"/></svg> Инженерные сети</a>
+        </div>
+      </div>
+      <a href="portfolio.html" class="nav-link">Объекты</a>
+      <a href="about.html" class="nav-link">О компании</a>
+      <a href="contact.html" class="nav-link active">Контакты</a>
+    </nav>
+    <div class="hdr__cta">
+      <div class="hdr__info">
+        <div class="hdr__addr"><svg class="ico"><use href="#i-pin"/></svg> ш. Волоколамское, 116</div>
+        <a href="tel:+79669230000" class="hdr__phone"><svg class="ico"><use href="#i-phone"/></svg> +7 (966) 923-00-00</a>
+      </div>
+      <a href="#form" class="btn btn-primary"><span>Обсудить проект</span><svg class="ico"><use href="#i-arrow-right"/></svg></a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mob-nav">
+  <a href="index.html" class="mob-link">Главная</a>
+  <a href="services/monolit.html" class="mob-link">Монолитные работы</a>
+  <a href="services/fasad.html" class="mob-link">Фасадные работы</a>
+  <a href="services/otdelka.html" class="mob-link">Отделочные работы</a>
+  <a href="services/seti.html" class="mob-link">Инженерные сети</a>
+  <a href="portfolio.html" class="mob-link">Объекты</a>
+  <a href="about.html" class="mob-link">О компании</a>
+  <a href="contact.html" class="mob-link">Контакты</a>
+  <div class="mob-nav__foot">
+    <a href="tel:+79669230000">+7 (966) 923-00-00</a>
+    <a href="#form" class="btn btn-primary">Обсудить проект</a>
+  </div>
+</nav>
+
+<section class="ct-hero">
+  <div class="ct-hero__bg" style="background-image:url('portfolio_imgs/page04_img1.jpg')"></div>
+  <div class="ct-hero__veil"></div>
+  <div class="wrap">
+    <div class="ct-hero__crumbs"><a href="index.html">Главная</a><span style="color:rgba(255,255,255,.25);">›</span><span style="color:#fff;">Контакты</span></div>
+    <lottie-player src="assets/lottie/contact.json" background="transparent" speed="1" autoplay loop style="position:absolute;top:60px;right:24px;width:480px;height:480px;opacity:.9;pointer-events:none;"></lottie-player>
+    <div style="max-width:780px;position:relative;z-index:3;">
+      <div class="hero__tag h-slide" style="margin-bottom:24px;"><span class="dot"></span> Прямая связь · Без секретарей</div>
+      <h1 class="h1 h-slide d1" style="color:#fff;">Свяжитесь <em class="acc" style="color:var(--accent);font-style:normal;">напрямую</em><br>с директором</h1>
+      <p class="lead r-up d2" style="color:rgba(255,255,255,.74); margin-top:22px; max-width:680px;">
+        Все вопросы — телефон, email, мессенджеры или форма ниже. Отвечаем в течение рабочего дня. Выезд инженера на объект — бесплатно.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:104px;">
+  <div class="wrap">
+    <div class="ct-cards-grid">
+      <div class="ct-card r-up d1">
+        <div class="ct-card__top">
+          <div class="ct-card__ico"><svg class="ico"><use href="#i-phone"/></svg></div>
+          <div>
+            <div class="ct-card__h">Телефон директора</div>
+            <div class="ct-card__title">Звонок и мессенджеры</div>
+          </div>
+        </div>
+        <div class="ct-card__big"><a href="tel:+79669230000">+7 (966) 923-00-00</a></div>
+        <div class="ct-card__sm">Оганнисян Гурген Аршакович, директор</div>
+        <div class="ct-card__chips">
+          <a href="https://t.me/+79669230000" target="_blank" rel="noopener" class="ct-chip ct-chip--tg"><svg class="ico"><use href="#i-send"/></svg> Telegram</a>
+          <a href="https://max.ru/" target="_blank" rel="noopener" class="ct-chip ct-chip--max"><svg class="ico"><use href="#i-message"/></svg> MAX</a>
+          <a href="https://wa.me/79669230000" target="_blank" rel="noopener" class="ct-chip ct-chip--wa"><svg class="ico"><use href="#i-phone"/></svg> WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="ct-card r-up d2">
+        <div class="ct-card__top">
+          <div class="ct-card__ico"><svg class="ico"><use href="#i-mail"/></svg></div>
+          <div>
+            <div class="ct-card__h">Email</div>
+            <div class="ct-card__title">Документы и заявки</div>
+          </div>
+        </div>
+        <div class="ct-card__big"><a href="mailto:Gurgen1982@list.ru">Gurgen1982@list.ru</a></div>
+        <div class="ct-card__sm">Для коммерческих предложений, ТЗ, проектной документации</div>
+        <div class="ct-card__chips">
+          <a href="mailto:Gurgen1982@list.ru?subject=Запрос%20сметы" class="ct-chip"><svg class="ico"><use href="#i-document"/></svg> Запросить смету</a>
+        </div>
+      </div>
+
+      <div class="ct-card r-up d3">
+        <div class="ct-card__top">
+          <div class="ct-card__ico"><svg class="ico"><use href="#i-pin"/></svg></div>
+          <div>
+            <div class="ct-card__h">Главный офис</div>
+            <div class="ct-card__title">Москва</div>
+          </div>
+        </div>
+        <div class="ct-card__big" style="font-size:18px;">ш. Волоколамское,<br>д. 116, помещ. 439</div>
+        <div class="ct-card__sm">Пн–Пт, 9:00–19:00 МСК · м. Волоколамская</div>
+        <div class="ct-card__chips">
+          <a href="https://yandex.ru/maps/?text=Москва+Волоколамское+шоссе+116" target="_blank" rel="noopener" class="ct-chip"><svg class="ico"><use href="#i-pin"/></svg> Открыть в Яндекс.Картах</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm">
+  <div class="wrap">
+    <div style="margin-bottom:40px;">
+      <div class="kicker">Как нас найти</div>
+      <h2 class="h2 h-slide">Главный офис в <em class="acc">Москве</em></h2>
+    </div>
+    <div class="map-wrap r-scale">
+      <iframe src="https://yandex.ru/map-widget/v1/?text=Москва%20Волоколамское%20шоссе%20116&z=15" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-warm" id="form">
+  <div class="bg-vec bg-vec--lines"></div>
+  <div class="wrap" style="position:relative;">
+    <div class="cta-row">
+      <div>
+        <div class="kicker">Заявка на расчёт</div>
+        <h2 class="h2 h-slide">Опишите задачу —<br><em class="acc">перезвоним</em> в течение дня</h2>
+        <p class="lead r-up d1" style="margin-top:18px;max-width:480px;">
+          Если есть проектная документация — приложите ссылку. Подготовим коммерческое предложение и смету.
+        </p>
+        <div class="r-up d2" style="margin-top:36px; padding:24px; background:#fff; border:1px solid var(--border); border-radius:var(--r-md);">
+          <div style="font-size:13px;color:var(--text-mute);margin-bottom:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;">Что вы получите</div>
+          <ul style="display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text);"><svg class="ico" style="color:var(--accent);font-size:18px;flex-shrink:0;margin-top:2px;"><use href="#i-check"/></svg> Звонок директора в течение рабочего дня</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text);"><svg class="ico" style="color:var(--accent);font-size:18px;flex-shrink:0;margin-top:2px;"><use href="#i-check"/></svg> Бесплатный выезд инженера на объект</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text);"><svg class="ico" style="color:var(--accent);font-size:18px;flex-shrink:0;margin-top:2px;"><use href="#i-check"/></svg> Прозрачная смета без скрытых статей</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text);"><svg class="ico" style="color:var(--accent);font-size:18px;flex-shrink:0;margin-top:2px;"><use href="#i-check"/></svg> Договор с фиксацией сроков и ответственности</li>
+          </ul>
+        </div>
+      </div>
+      <div class="r-scale d2">
+        <form class="cta-card" data-form>
+          <div class="cta-card__fields">
+            <div class="cta-card__title">Связаться</div>
+            <div class="cta-card__sub">Заполните форму — перезвоним в течение рабочего дня</div>
+            <div class="fg"><label>Имя</label><input type="text" placeholder="Иван Петров"></div>
+            <div class="fg"><label>Телефон *</label><input type="tel" placeholder="+7 (___) ___-__-__" required></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="info@company.ru"></div>
+            <div class="fg"><label>Организация</label><input type="text" placeholder="ООО «Название»"></div>
+            <div class="fg"><label>Описание задачи</label><textarea placeholder="Вид работ, объём, адрес объекта, желаемые сроки..."></textarea></div>
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+            <div class="priv">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</div>
+          </div>
+          <div class="cta-success">
+            <div class="cta-success__ico"><svg class="ico"><use href="#i-check"/></svg></div>
+            <div class="cta-success__t">Заявка получена</div>
+            <div class="cta-success__s">Свяжемся с вами в течение одного рабочего дня.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto 36px;">
+      <div class="kicker kicker--center">Реквизиты</div>
+      <h2 class="h2 h-slide">Юридическая <em class="acc">информация</em></h2>
+    </div>
+    <div class="req-card r-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <div>
+          <div style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.015em;">ООО «АПАГА»</div>
+          <div style="font-size:13px;color:var(--text-mute);margin-top:4px;">Полное наименование: Общество с ограниченной ответственностью «АПАГА»</div>
+        </div>
+        <a href="#form" class="btn btn-outline btn-sm"><svg class="ico"><use href="#i-document"/></svg><span>Запросить полные реквизиты</span></a>
+      </div>
+      <div class="req-grid">
+        <div class="req-item"><div class="req-item__lab">ИНН</div><div class="req-item__val">7733394542</div></div>
+        <div class="req-item"><div class="req-item__lab">КПП</div><div class="req-item__val">773301001</div></div>
+        <div class="req-item"><div class="req-item__lab">ОГРН</div><div class="req-item__val">1227700683374</div></div>
+        <div class="req-item"><div class="req-item__lab">Дата регистрации</div><div class="req-item__val">20.10.2022</div></div>
+        <div class="req-item"><div class="req-item__lab">ОКПО</div><div class="req-item__val">52900240</div></div>
+        <div class="req-item"><div class="req-item__lab">ОКАТО</div><div class="req-item__val">45283555000</div></div>
+        <div class="req-item"><div class="req-item__lab">ОКТМО</div><div class="req-item__val">45366000000</div></div>
+        <div class="req-item"><div class="req-item__lab">Банк</div><div class="req-item__val">АО «Альфа-Банк», Москва</div></div>
+        <div class="req-item"><div class="req-item__lab">Расчётный счёт</div><div class="req-item__val">40702810201610000375</div></div>
+        <div class="req-item"><div class="req-item__lab">Корр. счёт</div><div class="req-item__val">30101810200000000593</div></div>
+        <div class="req-item"><div class="req-item__lab">БИК</div><div class="req-item__val">044525593</div></div>
+        <div class="req-item"><div class="req-item__lab">Ген. директор</div><div class="req-item__val">Чернобай Дмитрий Викторович</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div><img src="assets/img/logo.svg" alt="АПАГА" width="180" height="50" style="filter:brightness(0) invert(1);"><p class="footer__brand-desc">Строительный подрядчик полного цикла. Объекты для ПИК, РЖД, государственных заказчиков. Главный офис — Москва, работаем по всей России с 2009 года.</p></div>
+      <div><div class="footer__col-h">Услуги</div><div class="footer__links"><a href="services/monolit.html" class="footer__link">Монолитные работы</a><a href="services/fasad.html" class="footer__link">Фасадные работы</a><a href="services/otdelka.html" class="footer__link">Отделочные работы</a><a href="services/seti.html" class="footer__link">Инженерные сети</a></div></div>
+      <div><div class="footer__col-h">Компания</div><div class="footer__links"><a href="about.html" class="footer__link">О компании</a><a href="portfolio.html" class="footer__link">Портфолио</a><a href="contact.html" class="footer__link">Контакты</a></div></div>
+      <div>
+        <div class="footer__col-h">Контакты</div>
+        <div class="footer__contact-row"><div class="footer__contact-ico"><svg class="ico"><use href="#i-phone"/></svg></div><div><div class="footer__contact-val"><a href="tel:+79669230000">+7 (966) 923-00-00</a></div><div class="footer__contact-sub">Оганнисян Гурген Аршакович, директор</div></div></div>
+        <div class="footer__contact-row"><div class="footer__contact-ico"><svg class="ico"><use href="#i-mail"/></svg></div><div><div class="footer__contact-val"><a href="mailto:Gurgen1982@list.ru">Gurgen1982@list.ru</a></div></div></div>
+        <div class="footer__contact-row"><div class="footer__contact-ico"><svg class="ico"><use href="#i-pin"/></svg></div><div><div class="footer__contact-val">Москва, ш. Волоколамское, 116</div></div></div>
+      </div>
+    </div>
+    <div class="footer__bot"><span>© 2009–2026 ООО «АПАГА». Все права защищены.</span><span>ИНН 7733394542 · ОГРН 1227700683374</span></div>
+  </div>
+</footer>
+
+
+
+<div class="fab-stack">
+  <button class="btt" aria-label="Наверх"><svg class="ico"><use href="#i-arrow-up"/></svg></button>
+  <a href="https://t.me/+79669230000" target="_blank" rel="noopener" class="fab-btn fab-tg" data-tip="Написать в Telegram" aria-label="Telegram"><svg class="ico"><use href="#i-send"/></svg></a>
+  <a href="https://max.ru/" target="_blank" rel="noopener" class="fab-btn fab-max" data-tip="MAX" aria-label="MAX"><svg class="ico"><use href="#i-max"/></svg></a>
+</div>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

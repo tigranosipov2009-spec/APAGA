@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where pdftotext *)",
+      "Bash(where qpdf *)",
+      "Bash(where python *)",
+      "Bash(pdftotext -f 1 -l 50 \"C:\\\\Users\\\\user\\\\Downloads\\\\APAGA_portfolio.pdf\" -)",
+      "Bash(py --version)",
+      "Bash(py -m pip list)",
+      "Bash(py -m pip install pypdf)",
+      "Bash(where pdftoppm *)",
+      "Bash(where magick *)",
+      "Bash(where convert *)",
+      "Bash(where pdftocairo *)",
+      "Bash(where pdfimages *)",
+      "Bash(py -m pip install pdf2image pillow)",
+      "Bash(where gs *)",
+      "Read(//c/Program Files/Git/mingw64/**)",
+      "Bash(cairo)",
+      "Bash(ppm\" | head -10)",
+      "Bash(py -m pip install PyMuPDF)",
+      "Bash(py -c \"import fitz; print\\(fitz.__doc__[:100]\\)\")",
+      "Bash(py -c \"import fitz; print\\('OK', fitz.__version__\\)\")",
+      "Bash(py -c ' *)",
+      "Bash(py -c \"import fitz\")",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(py)",
+      "Bash(py _update.py)",
+      "Bash(mv \"City Building Construction.json\" construction.json)",
+      "Bash(mv \"Business Partnership _ Contract _ Handshake.json\" handshake.json)",
+      "Bash(mv \"Animation - contact us.json\" contact.json)",
+      "Bash(mv \"Steps.json\" steps.json)"
+    ]
+  }
+}
