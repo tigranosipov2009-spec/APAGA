@@ -29,7 +29,8 @@
       "Bash(mv \"City Building Construction.json\" construction.json)",
       "Bash(mv \"Business Partnership _ Contract _ Handshake.json\" handshake.json)",
       "Bash(mv \"Animation - contact us.json\" contact.json)",
-      "Bash(mv \"Steps.json\" steps.json)"
+      "Bash(mv \"Steps.json\" steps.json)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
