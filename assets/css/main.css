@@ -265,25 +265,25 @@ section { position: relative; }
 .hdr.scrolled { box-shadow: var(--sh); }
 
 .hdr__row {
-  padding: 10px var(--edge);
+  padding: 8px var(--edge);
   display: flex;
   align-items: center;
   gap: 36px;
 }
-.hdr__logo img { height: 64px; width: auto; display: block; }
+.hdr__logo img { height: 72px; width: auto; display: block; object-fit: contain; }
 .hdr__logo { flex-shrink: 0; display: flex; align-items: center; gap: 12px; line-height: 1; }
 .hdr__logo-tag {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -.005em;
+  gap: 3px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -.02em;
   color: var(--ink);
   white-space: nowrap;
   border-left: 1px solid var(--border);
   padding-left: 14px;
-  line-height: 1.25;
+  line-height: 1.1;
 }
 .hdr__logo-tag small {
   font-size: 10.5px;
